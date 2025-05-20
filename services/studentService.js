@@ -3,8 +3,8 @@
  */
 
 const ExcelJS = require('exceljs');
-const { excelFilePath, columnas } = require('../config/config');
-const { downloadFile } = require('./dropboxService');
+const { columnas } = require('../config/config');
+const { getWorkbook } = require('./studentExcelService');
 
 /**
  * Busca un estudiante por su ID en el archivo Excel.
@@ -13,12 +13,16 @@ const { downloadFile } = require('./dropboxService');
  */
 async function buscarEstudiante(id) {
   try {
-    // Download and cache the Excel file from Dropbox
-    const localExcelPath = await downloadFile(excelFilePath);
+    // Obtener el workbook cacheado desde el nuevo módulo
+    const workbook = await getWorkbook();
 
-    const workbook = new ExcelJS.Workbook();
-    await workbook.xlsx.readFile(localExcelPath);
-    const hoja = workbook.getWorksheet('Hoja1');
+    // Obtener la hoja "Matricula 2025" (hoja número 5)
+    // Intentar obtener por nombre, si no existe, obtener por índice (5)
+    let hoja = workbook.getWorksheet('Matricula 2025');
+    if (!hoja) {
+      hoja = workbook.worksheets[5]; // índice 5 = hoja número 6 (0-based)
+      console.log(`[${new Date().toISOString()}] Hoja "Matricula 2025" no encontrada por nombre, usando hoja número 6: ${hoja.name}`);
+    }
 
     let estudiante = null;
 
