@@ -11,11 +11,11 @@ module.exports = {
   dataDir: path.join(__dirname, '..', 'data'),
   infoEscuela: {
     nombre: "Instituto Jose Cecilio Del Valle",
-    direccion: "Colonia Altos De Loarque ,al final de la calle",
-    telefono: "+504 2275-8510",
-    email: "info@centroejemplo.edu.hn",
+    direccion: "https://acortar.link/ijUbNm",
+    telefono: "http://wa.me/50495031205",
+    email: "institutojosececiliodelvalle@yahoo.com",
     horario: "Lunes a Viernes: 7:00 AM - 4:00 PM",
-    sitioWeb: "www.JoseCecilio.edu.hn"
+    sitioWeb: "www.JoseCecilioDelValle.edu.hn"
   },
   columnas: {
     NOMBRE: 'A',
