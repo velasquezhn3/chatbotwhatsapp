@@ -6,7 +6,7 @@ const path = require('path');
 
 module.exports = {
   excelFilePath: '/datos_estudiantes.xlsx',
-  relacionesFilePath: '/relaciones.xlsx',
+  relacionesFilePath: 'relaciones.xlsx',
   encargadosFilePath: path.join(__dirname, '..', 'encargados.json'),
   dataDir: path.join(__dirname, '..', 'data'),
   infoEscuela: {

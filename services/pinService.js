@@ -4,7 +4,7 @@
 
 const ExcelJS = require('exceljs');
 const { relacionesFilePath } = require('../config/config');
-const { downloadFile } = require('./dropboxService');
+// Eliminado dropboxService
 
 /**
  * Valida el PIN para un estudiante dado.
@@ -14,11 +14,9 @@ const { downloadFile } = require('./dropboxService');
  */
 async function validarPIN(idEstudiante, pin) {
   try {
-    // Download and cache the Excel file from Dropbox
-    const localExcelPath = await downloadFile(relacionesFilePath);
-
+    // Leer el archivo Excel directamente desde el sistema de archivos local
     const workbook = new ExcelJS.Workbook();
-    await workbook.xlsx.readFile(localExcelPath);
+    await workbook.xlsx.readFile(relacionesFilePath);
     const hoja = workbook.getWorksheet(1);
 
     let pinValido = false;
