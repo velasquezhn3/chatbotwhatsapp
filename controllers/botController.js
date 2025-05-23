@@ -372,6 +372,9 @@ if (estudiante) {
           infoMensaje += `📧 *Email:* ${infoEscuela.email}\n`;
           infoMensaje += `⏰ *Horario:* ${infoEscuela.horario}\n`;
           infoMensaje += `🌐 *Sitio Web:* ${infoEscuela.sitioWeb}\n\n`;
+          infoMensaje += `🏦 *Cuentas Bancarias:*\n`;
+          infoMensaje += `⚪ *BAC:* ${infoEscuela.bac}\n`;
+          infoMensaje += `⚪ *Occidente:* ${infoEscuela.occidente}\n`;
           infoMensaje += `Escriba *menú* para volver al menú principal.`;
 
           await enviarMensajeConDelay(bot, remitente, { text: infoMensaje });
@@ -384,6 +387,7 @@ if (estudiante) {
           contactoMensaje += `📧 *Email:* ${infoEscuela.email}\n\n`;
           contactoMensaje += `⏰ *Horario de atención:*\n`;
           contactoMensaje += `${infoEscuela.horario}\n\n`;
+         
           contactoMensaje += `Escriba *menú* para volver al menú principal.`;
 
           await enviarMensajeConDelay(bot, remitente, { text: contactoMensaje });

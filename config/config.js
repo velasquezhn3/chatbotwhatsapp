@@ -13,9 +13,11 @@ module.exports = {
     nombre: "Instituto Jose Cecilio Del Valle",
     direccion: "https://acortar.link/ijUbNm",
     telefono: "http://wa.me/50495031205",
-    email: "institutojosececiliodelvalle@yahoo.com",
+    email: "contacto@josececiliodelvalle.edu.hn",
     horario: "Lunes a Viernes: 7:00 AM - 4:00 PM",
-    sitioWeb: "www.JoseCecilioDelValle.edu.hn"
+    sitioWeb: "www.JoseCecilioDelValle.edu.hn",
+    bac: "730043231",
+    occidente: "11-402-004148-5",
   },
   columnas: {
     NOMBRE: 'A',
